@@ -1,5 +1,8 @@
 # jQuery.ajaxLoadingBar
 
+### Demo
+http://jqueryajaxloadingbar.herokuapp.com/
+
 ### Usage
 
 ``$(window).ajaxLoadingBar({turbolinks: true, ajax: true})``
@@ -13,3 +16,4 @@
 * ajax (boolean) default: TRUE
 
 	render for ajax events
+	
