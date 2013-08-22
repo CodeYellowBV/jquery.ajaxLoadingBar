@@ -20,12 +20,20 @@
         window.pageLoader.restoreLoader()
 
     if settings.ajax
-      $(document).ajaxComplete (e)->
-        $('#pageLoader').remove()
-        window.pageLoader.restoreLoader()
+      window.remoteStack = []
+      $(document).on 'mouseup', '*[data-no-loader="true"]', ->
+        window.remoteStack.push($(this)) 
 
-      $(document).ajaxStart ->
-        window.pageLoader.startLoader()
+      $(document).ajaxComplete (e)->
+        unless $('#pageLoader').length == 0
+          $('#pageLoader').remove()
+          window.pageLoader.restoreLoader()
+        else
+          $('#pageLoader').remove()
+
+      $(document).ajaxStart (e)->
+        unless window.remoteStack.pop()
+          window.pageLoader.startLoader()
 
     window.pageLoader = 
       sliderWidth: 0
