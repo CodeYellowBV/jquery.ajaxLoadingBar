@@ -1,0 +1,10 @@
+{
+    "name": "jquery.ajaxLoadingBar",
+    "version": "0.0.1",
+    "description": "A npm-packaged version of Kevin Sheffield's jQuery.ajaxLoadingBar",
+    "author": "Kevin Sheffield",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/CodeYellowBV/jquery.ajaxLoadingBar.git"
+    }
+}
